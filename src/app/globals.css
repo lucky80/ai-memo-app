@@ -1,0 +1,173 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 마크다운 프리뷰 스타일 (Tailwind preflight 덮어쓰기) */
+.wmde-markdown {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+}
+
+/* 제목 # ## ### */
+.wmde-markdown h1,
+.wmde-markdown h2,
+.wmde-markdown h3,
+.wmde-markdown h4,
+.wmde-markdown h5,
+.wmde-markdown h6 {
+  display: block !important;
+  font-weight: 600 !important;
+  margin-top: 1.25em !important;
+  margin-bottom: 0.5em !important;
+  line-height: 1.25 !important;
+  color: #111827 !important;
+}
+.wmde-markdown h1 { font-size: 2em !important; }
+.wmde-markdown h2 { font-size: 1.5em !important; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3em; }
+.wmde-markdown h3 { font-size: 1.25em !important; }
+.wmde-markdown h4 { font-size: 1.125em !important; }
+.wmde-markdown h5 { font-size: 1em !important; }
+.wmde-markdown h6 { font-size: 0.875em !important; color: #6b7280 !important; }
+
+.wmde-markdown p {
+  display: block !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75em !important;
+}
+
+/* 목록 */
+.wmde-markdown ul,
+.wmde-markdown ol {
+  display: block !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75em !important;
+  padding-left: 2em !important;
+  list-style-position: outside !important;
+}
+.wmde-markdown ul { list-style-type: disc !important; }
+.wmde-markdown ol { list-style-type: decimal !important; }
+.wmde-markdown li {
+  display: list-item !important;
+  margin-top: 0.25em !important;
+}
+.wmde-markdown li::marker {
+  color: #374151 !important;
+}
+
+/* 코드·인라인코드 */
+.wmde-markdown pre,
+.wmde-markdown code {
+  font-family: ui-monospace, monospace !important;
+  font-size: 0.875em !important;
+}
+.wmde-markdown pre {
+  display: block !important;
+  background: #f3f4f6 !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.375rem !important;
+  overflow-x: auto !important;
+  margin-bottom: 0.75em !important;
+  border: 1px solid #e5e7eb !important;
+}
+.wmde-markdown code {
+  background: #f3f4f6 !important;
+  padding: 0.125em 0.375em !important;
+  border-radius: 0.25rem !important;
+  border: 1px solid #e5e7eb !important;
+}
+.wmde-markdown pre code {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* 인용 */
+.wmde-markdown blockquote {
+  display: block !important;
+  border-left: 4px solid #d1d5db !important;
+  margin: 0.75em 0 !important;
+  padding-left: 1em !important;
+  color: #6b7280 !important;
+}
+
+/* 링크 */
+.wmde-markdown a {
+  color: #2563eb !important;
+  text-decoration: underline !important;
+}
+.wmde-markdown a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* 강조 */
+.wmde-markdown strong {
+  font-weight: 700 !important;
+}
+.wmde-markdown em {
+  font-style: italic !important;
+}
+
+/* 구분선 */
+.wmde-markdown hr {
+  display: block !important;
+  border: 0 !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 1em 0 !important;
+}
+
+/* 테이블 */
+.wmde-markdown table {
+  display: block !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin-bottom: 0.75em !important;
+}
+.wmde-markdown th,
+.wmde-markdown td {
+  border: 1px solid #e5e7eb !important;
+  padding: 0.375rem 0.75rem !important;
+  text-align: left !important;
+}
+.wmde-markdown th {
+  font-weight: 600 !important;
+  background: #f9fafb !important;
+}

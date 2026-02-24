@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "playwright-mcp": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=zfybkhtjgmwuzfjbmlnz&features=account%2Cdocs%2Cdatabase%2Cdevelopment"
+    }
+  }
+}
